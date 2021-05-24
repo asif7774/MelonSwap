@@ -1,0 +1,27 @@
+.about-section{
+    .about-image{
+        img{
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+    .about-left{
+        color: #ffffff;
+        line-height: 1.2;
+        margin-top: 15px;
+        .box-wrapper {
+            h1{
+                font-size: 3rem;
+            }
+        }
+    }
+    .about-right{
+         color: #ffffff;
+         line-height: 1.3;
+         margin-top: 15px;
+         font-family: rainyhearts;
+         p{
+            font-size:1.3rem;
+         }
+    }
+}

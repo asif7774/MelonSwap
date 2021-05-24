@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background: url('./assets/images/primary-bg.jpg');
+    background-attachment: fixed;
+    font-family: minecrafter;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container {
+    max-width: 1030px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.d-flex {
+    display: flex !important;
+}
+.justify-content {
+    justify-content: center !important;
+}
+.justify-flex-end {
+    justify-content: flex-end !important;
+}
+.rainyhearts {
+    font-family: rainyhearts;
+    font-size: 18px;
+}
+.btn {
+    height: 45px;
+    border-radius: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6E6E6E;
+    border: 1px solid #080e05;
+    padding: 10px 16px;
+    text-decoration: none;
+    box-shadow: 0 1px 2px #dfdfdf inset;
+    color: #CCCCCC;
+    cursor: pointer;
+    outline: none !important;
+    user-select: none;
+    min-width: 156px;
+    font: inherit;
+    @media screen and (max-width:767px) {
+        padding: 6px 10px;
+        min-width: auto;
+        font-size: 12px;
+        height: 38px;
+    }
+}
+.btn:hover,
+.btn:focus {
+    background-color: #7D88BE;
+    color: #fff;
+}
+.btn-active,
+.react-tabs__tab--selected {
+    background-color: #7D88BE;
+    color: #fff;
+}
+
+.inline-list {
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.inline-list > li {
+    display: flex;
+    align-content: center;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.inline-list > li .btn,
+.tab-nav .btn,
+.react-tabs__tab-list .btn {
+    min-width: 156px;
+
+}
+.tab-nav .btn,
+.react-tabs__tab-list .btn {
+    margin-left: 8px;
+    margin-right: 8px;
+    @media screen and (max-width:767px) {
+        min-width: auto;
+        padding: 6px 10px;
+        height: 38px;
+    }
+}
+.react-tabs__tab-list {
+    display: flex;
+    justify-content: center;
+    border-bottom: none;
+    margin-top: 22px;
+    padding-left: 0;
+}
+
+.form-control-box {
+    border: 1px solid #fff;
+    background-color: #8f8f8f;
+    margin-bottom: 16px;
+    color: #fff;
+}
+hr {
+    border-top: 0;
+    margin: 16px 0;
+}
+.form-control-box-head {
+    height: 28px;
+    background-color: #afafaf;
+    color: #fff;
+    display: flex;
+    padding: 4px 16px;
+    align-items: center;
+    box-shadow: 0 0 0 1px #443906 inset;
+    justify-content: space-between;
+}
+.form-control {
+    width: 100%;
+    background-color: transparent;
+    height: 42px;
+    display: block;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    padding: 2px 16px;
+    color: #fff;
+    font-family: minecrafter;
+}
+.connect-block {
+    margin-top: 28px;
+    margin-bottom: 10px;
+}
+.control-container {
+    display: flex;
+}
+.control-block {
+    flex-grow: 1;
+    padding: 10px;
+    max-width: 50%;
+}
+.btn-block {
+    width: 100% !important;
+    min-width: 100%;
+}
+.reserve-table {
+    margin-top: 16px;
+}
+.reserve-table .reserve-table-row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.reserve-table .col {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    line-height: 1.5;
+}
+.reserve-table .col.rainyhearts {
+    font-size: 18px;
+}
+.slippage-link {
+    text-decoration: underline;
+    cursor: pointer;
+}

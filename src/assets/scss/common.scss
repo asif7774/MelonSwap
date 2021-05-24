@@ -1,0 +1,114 @@
+@import "./grid/grid.scss";
+
+$primary-color: #6e6e6e;
+$secondary-color: #7d88be;
+$white: #ffffff;
+
+.content-view{
+    min-height: calc(100vh - 55px);
+    width: 1100px;
+    max-width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 60px;
+    padding-top: 40px;
+    @media screen and (max-width:767px) {
+        width: 90%;
+    }
+}
+
+.melon-input{
+    background: #000000;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1.4rem;
+    font-family: rainyhearts;
+    width: 100%;
+}
+
+.text-white{
+    color: $white;
+}
+
+.main-wrapper{
+    padding-top: 55px;
+}
+
+.mt-15{
+    margin-top: 15px;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-secondary{
+    color: #7d88be !important;
+}
+
+.red-btn{
+    background: #DC4145;
+    color: #ffffff;
+    box-shadow: 0 1px 2px #dfdfdf inset;
+    border: 1px solid #080e05;
+    height: 35px;
+    text-align: center;
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-family: minecrafter;
+    cursor: pointer;
+    &:hover{
+        background: #CB2D2B;
+        outline: none;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+
+.secondary-btn{
+    background: $secondary-color;
+    color: #ffffff;
+    box-shadow: 0 1px 2px #dfdfdf inset;
+    border: 1px solid #080e05;
+    height: 35px;
+    text-align: center;
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-family: minecrafter;
+    cursor: pointer;
+    &:hover{
+        background: $primary-color;
+        outline: none;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+
+.btn{
+    &.secondary-btn{
+        background: $secondary-color;
+        color: #ffffff;
+        box-shadow: 0 1px 2px #dfdfdf inset;
+        border: 1px solid #080e05;
+        text-align: center;
+        padding: 0 15px;
+        text-transform: uppercase;
+        font-family: minecrafter;
+        cursor: pointer;
+        &:hover{
+            background: $primary-color;
+            outline: none;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+}

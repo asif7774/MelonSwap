@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Minecrafter';
+  src: url('minecrafter.svg#Minecrafter') format('svg'),
+       url('minecrafter.ttf') format('truetype'),
+       url('minecrafter.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'minecrafter';
+  src: url('minecrafter.eot');
+  src: url('minecrafter.eot?#iefix') format('embedded-opentype'),
+       url('minecrafter.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'rainyhearts';
+  src: url('rainyhearts.eot');
+  src: url('rainyhearts.eot?#iefix') format('embedded-opentype'),
+       url('rainyhearts.svg#rainyhearts') format('svg'),
+       url('rainyhearts.ttf') format('truetype'),
+       url('rainyhearts.woff') format('woff'),
+       url('rainyhearts.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+

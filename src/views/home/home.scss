@@ -1,0 +1,275 @@
+.box-wrapper{
+    background: rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 40px;
+}
+.select-group-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.box-wrapper .select-group{
+    display: flex;
+    margin: 10px 20px;
+    width: 100%;
+    @media screen and (max-width:767px) {
+        margin: 0 10px;
+    }
+}
+.box-wrapper .select-group select{
+     appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: #000000;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    height: 45px;
+    padding: 0 30px 0 20px;
+    font-size: 1.4rem;
+    font-family: rainyhearts;
+    background-image: url(../../assets/images/select-arrow.svg);
+    background-repeat: no-repeat;
+    background-size: 11px;
+    background-position: 91% 50%;
+    min-width: 180px;
+    @media screen and (max-width:767px) {
+        font-size: 0.9rem;
+        padding: 0 15px 0 10px;
+        background-size: 7px;
+    }
+}
+
+.box-wrapper .select-group select:focus{
+    border-radius: 0;
+}
+
+.box-wrapper h1{
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffffff;
+    letter-spacing: 3px;
+    @media screen and (max-width:767px) {
+        font-size: 1.5rem;
+    }
+}
+
+.box-wrapper h3{
+    text-align: center;
+    font-size: 2rem;
+    color: #ffffff;
+    letter-spacing: 3px;
+}
+
+.box-wrapper h4{
+    text-align: center;
+    font-size: 1.3rem;
+    color: #ffffff;
+    letter-spacing: 3px;
+}
+
+.box-wrapper .select-group input{
+    background: #000000;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1.4rem;
+    font-family: rainyhearts;
+    width: 100%;
+}
+
+.box-wrapper .select-group input:focus{
+    border-radius: 0;
+}
+
+.swap-icon{
+    text-align: center;
+    padding: 20px;
+}
+
+.swap-icon img{
+    width: 50px;
+    @media screen and (max-width:767px) {
+        width: 30px;
+    }
+}
+
+.box-wrapper {
+    text-align: center;
+}
+
+.box-wrapper.text-left {
+    text-align: left;
+}
+
+.box-wrapper .swap-btn button{
+    width: 300px;
+    margin: auto;
+    max-width: 100%;
+}
+
+.two-buttons{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.two-buttons .btn{
+    width: 250px;
+    margin: 20px 10px;
+}
+
+.text-white{
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.details-text{
+    font-family: rainyhearts;
+    font-size: 1.4rem;
+    padding: 8px 0;
+    text-align: left;
+    @media screen and (max-width:767px) {
+        font-size: 1.3rem;
+    }
+}
+
+.details-text b{
+    font-weight: bold;
+}
+
+.details-footer{
+    border-top: 1px solid #000000;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.pb-0{
+    padding-bottom: 0;
+}
+
+.modal-cus{
+    background:url(../../assets/images/modal-bg.png);
+    background-repeat: repeat;
+    max-width: 900px;
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    left: 0;
+    padding: 30px;
+    border: 0;
+    outline: none !important;
+    @media screen and (max-width:767px) {
+        width: 90%;
+        padding: 25px 16px;
+    }
+    .modal-body{
+        max-height: 80vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open{
+    background:rgba(0,0,0,0.8) !important;
+}
+
+.modal-close-icon {
+    background:none;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+}
+
+.modal-close-icon:focus {
+    outline: none;
+    border: 0;
+}
+
+.modal-close-icon img{
+    width: 32px;
+}
+
+.listbox-dtl{
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    color: #ffffff;
+    font-family: rainyhearts;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.listbox-dtl .listbox-dtl-header{
+    border-bottom: 1px solid #201610;
+    background: rgba(0,0,0,0.3);
+    padding: 8px 12px;
+}
+
+.listbox-dtl .listbox-dtl-body{
+    padding: 8px 12px;
+}
+
+.withdrawinput-group{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.withdrawinput-group input{
+    height: 42px;
+    background: #000000;
+    border: 1px solid #fff;
+    color: #ffffff;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.withdrawinput-group button{
+    min-width: 126px;
+}
+
+.modal-right{
+    font-family: rainyhearts;
+    font-size: 1.2rem;
+}
+
+.connect-wallet-top{
+    padding-top: 10px;
+    text-align: right;
+    margin-bottom: -8px;
+}
+
+.pb-20{
+    padding-bottom: 20px;
+}
+
+.home-left{
+    padding-bottom: 45px;
+    padding-top: 35px;
+    .swap-btn{
+        margin-top: 40px;
+    }
+}
+
+.home-right{
+    .home-right-card{
+        padding: 25px 15px;
+        width: 100%;
+        .details-text{
+            font-size: 1rem;
+        }
+    }
+    .home-right-btns{
+        display: flex;
+        flex-direction: column;
+        padding: 20px 40px;
+        .btn{
+            margin: 10px auto;
+            width: 100%;
+        }
+    }
+}

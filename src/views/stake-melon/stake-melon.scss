@@ -1,0 +1,55 @@
+ .stakemelon-section{
+    .stakemelon-top{
+        .box-wrapper{
+            margin-bottom: 55px;
+            .stakelp-box{
+                display: flex;
+                text-align: right;
+                width: 100%;
+                justify-content: center;
+                padding: 40px 15px;
+                .left{
+                    width: 100%;
+                }
+                .right{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    padding-left: 30px;
+                }
+                p{
+                    font-family: rainyhearts;
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    color: #ffffff;
+                    margin-bottom: 0;
+                    margin-top: 5px;
+                }
+                input{
+                    margin-right: 20px;
+                }
+            }
+            .headings{
+                color: #ffffff;
+                margin-bottom: 0;
+            }
+            .stakelp-box-bottom{
+                font-family: rainyhearts;
+                p{
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: #ffffff;
+                    margin-bottom: 10px;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    .stakemelon-bottom{
+        font-family: rainyhearts;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #ffffff;
+        text-align: left;
+    }
+ }
