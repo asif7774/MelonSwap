@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import MediaQuery from 'react-responsive';
 import './header.scss';
 
@@ -62,7 +62,10 @@ class HeaderView extends Component {
                     <div className="header-inner">
                         <div className="leftmenus">
                             <div className="logo-header">
-                                <img alt="Melonswap" src={LogoImage} />
+                                <Link to="/home">
+                                    <img alt="Melonswap" src={LogoImage} />
+                                    <div>Melonswap</div>
+                                </Link>
                             </div>
                             <MediaQuery maxDeviceWidth={767}>
                             <div className="menu-icon" onClick={this.sidebarToggle}>

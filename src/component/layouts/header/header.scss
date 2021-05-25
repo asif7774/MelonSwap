@@ -2,7 +2,7 @@
 
 .header-wrapper{
     background: #BDBCBA;
-    height: 55px;
+    height: 47px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -26,8 +26,17 @@
                 justify-content: space-between;
             }
             .logo-header{
+                display: flex;
+                align-items: center;
+                a{
+                    color: #000000;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                }
                 img{
-                    width: 50px;
+                    width: 42px;
+                    margin-right: 8px;
                 }
             }
             .menu-icon{
@@ -111,13 +120,12 @@
                 padding-left: 0;
                 justify-content: space-around;
                 width: 100%;
-                max-width: 650px;
+                max-width: 500px;
                 margin-left: auto;
                 @media screen and (max-width:767px) {
                     width: 90%;
                 }
                 li{
-                    width: 100%;
                     a{
                         color: #333333;
                         text-decoration: none;
