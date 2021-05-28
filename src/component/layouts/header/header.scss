@@ -2,7 +2,6 @@
 
 .header-wrapper{
     background: #BDBCBA;
-    height: 47px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -13,6 +12,7 @@
         margin-left: auto;
         margin-right: auto;
         display: flex;
+        min-height: 55px;
         align-items: center;
         justify-content: space-between;
         padding: 2px 0;
@@ -106,6 +106,13 @@
             .red-btn{
                 padding: 0 25px;
             }
+        }
+        .header-connect{
+            font-size: 15px;
+            height: 38px;
+            min-width: auto;
+            padding: 0 12px;
+            margin-left: 10px;
         }
         .rightmenus{
             width: 100%;

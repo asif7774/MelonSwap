@@ -9,7 +9,9 @@ class DocsView extends Component {
                 <div className="main-wrapper">
                     <HeaderView />
                     <div className="content-view text-center">
-                        <h1 style={{ color: 'white' }}>Coming Soon!</h1>
+                        <div className="content-view-inner">
+                            <h1 style={{ color: 'white' }}>Coming Soon!</h1>
+                        </div>
                     </div>
                     <FooterView />
                 </div>

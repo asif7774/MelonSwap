@@ -68,15 +68,15 @@ class HeaderView extends Component {
                                 </Link>
                             </div>
                             <MediaQuery maxDeviceWidth={767}>
-                            <div className="menu-icon" onClick={this.sidebarToggle}>
-                                <div className="menu-icon-lines">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <div className="menus-list" id="menuMobile">
-                                    <HeaderMenus />
-                                </div>
+                                <div className="menu-icon" onClick={this.sidebarToggle}>
+                                    <div className="menu-icon-lines">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                    <div className="menus-list" id="menuMobile">
+                                        <HeaderMenus />
+                                    </div>
                                 </div>
                             </MediaQuery>
                         </div>
@@ -85,6 +85,7 @@ class HeaderView extends Component {
                                 <HeaderMenus />
                             </div>
                         </MediaQuery>
+                        <button className="btn secondary-btn header-connect">Connect</button>
                     </div>
                 </div>
             </React.Fragment>
