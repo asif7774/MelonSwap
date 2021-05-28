@@ -1,0 +1,36 @@
+
+.modal-pools{
+    background: rgba(#541A19, 0.6);
+    border: 2px solid #541A19;
+    max-width: 700px;
+    .modal-close-icon {
+        img{
+            width: 45px;
+        }
+    }
+    .withdrawinput-group{
+        button{
+            text-transform: uppercase;
+            font-family: minecrafter;
+            font-weight: normal;
+            padding: 0 30px;
+        }
+        &.text-center{
+            justify-content: center;
+        }
+    }
+    .listbox-dtl{
+        background: #2A0C0E;
+        border: 1px solid #E6BEBC;
+        .listbox-dtl-header{
+            background: none;
+            border: 0;
+            padding-bottom: 0;
+        }
+        .listbox-dtl-body{
+            input{
+                max-width: 120px;
+            }
+        }
+    }
+}

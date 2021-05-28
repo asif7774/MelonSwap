@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { HeaderView, FooterView } from '../../component/layouts';
 import './stake-lp.scss';
+import HarvestModal from "./harvest-modal/harvest-modal"
+import DepositModal from "./deposit-modal/deposit-modal";
 
 import logoImage from "../../assets/images/logo.png"
 
@@ -30,7 +32,7 @@ class StakeLpView extends Component {
                                         </div>
                                     </div>
                                     <div className="text-center p-2">
-                                        <button className="btn btn-primary">HARVEST</button>
+                                        <HarvestModal />
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +49,7 @@ class StakeLpView extends Component {
                                         </div>
                                     </div>
                                     <div className="text-center p-2">
-                                        <button className="btn btn-primary">DEPOSIT</button>
+                                        <DepositModal />
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +64,7 @@ class StakeLpView extends Component {
                                         </div>
                                     </div>
                                     <div className="text-center p-2">
-                                        <button className="btn btn-primary">DEPOSIT</button>
+                                        <DepositModal />
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +79,7 @@ class StakeLpView extends Component {
                                         </div>
                                     </div>
                                     <div className="text-center p-2">
-                                        <button className="btn btn-primary">DEPOSIT</button>
+                                        <DepositModal />
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { HeaderView, FooterView } from '../../component/layouts';
 import './home.scss';
+import DepositModal from "./deposit-modal/deposit-modal";
+import WithdrawModal from "./withdraw-modal/withdraw-modal";
 
 import swapIcon from "../../assets/images/swap-white.svg"
 
@@ -14,6 +16,11 @@ class HomeView extends Component {
                 <div className="main-wrapper">
                     <HeaderView />
                     <div className="content-view">
+                        <div className="row mt-n4 mb-3 text-right">
+                            <div className="col-sm-12">
+                                <button className="btn">Connect Wallet</button>
+                            </div>
+                        </div>
                         <div className="row">
                             <div className="col-sm-12 col-md-6 col-lg-8">
                                 <div className="box-wrapper home-left">
@@ -82,8 +89,8 @@ class HomeView extends Component {
                                     </div>
                                 </div>
                                 <div className="home-right-btns">
-                                    <button className="btn block">DEPOSIT</button>
-                                    <button className="btn secondary-btn block">WITHDRAW</button>
+                                    <DepositModal />
+                                    <WithdrawModal />
                                 </div>
                                 <div className="box-wrapper home-right-card">
                                     <p className="text-white">4ME Pool Reserves</p>
