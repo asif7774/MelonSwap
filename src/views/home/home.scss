@@ -262,11 +262,18 @@
         .details-text{
             font-size: 1rem;
         }
+        @media screen and (max-width:991px){
+            margin-top: 40px;        
+        }
     }
     .home-right-btns{
         display: flex;
         flex-direction: column;
         padding: 20px 40px;
+        @media screen and (max-width:991px){
+            padding-bottom:0;        
+            padding-top:35px;        
+        }
         .btn{
             margin: 10px auto;
             width: 100%;

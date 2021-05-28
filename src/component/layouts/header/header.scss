@@ -1,7 +1,7 @@
  @import "../../../assets/scss/common.scss";
 
 .header-wrapper{
-    background: #BDBCBA;
+    background: rgba(0, 0, 0, 0.25);
     position: fixed;
     width: 100%;
     top: 0;
@@ -29,7 +29,7 @@
                 display: flex;
                 align-items: center;
                 a{
-                    color: #000000;
+                    color: $white;
                     text-decoration: none;
                     display: flex;
                     align-items: center;
@@ -108,11 +108,12 @@
             }
         }
         .header-connect{
-            font-size: 15px;
-            height: 38px;
+            font-size: 14px;
             min-width: auto;
-            padding: 0 12px;
+            padding: 10px 12px 8px;
             margin-left: 10px;
+            height: initial;
+
         }
         .rightmenus{
             width: 100%;
@@ -134,7 +135,7 @@
                 }
                 li{
                     a{
-                        color: #333333;
+                        color: $white;
                         text-decoration: none;
                         &:hover{
                             color: #000000;
