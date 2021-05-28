@@ -5,10 +5,13 @@ import reportWebVitals from './reportWebVitals';
 import 'flexboxgrid/css/flexboxgrid.css';
 import './assets/font/font.css'
 import './App.scss';
+import { MetamaskStateProvider } from "use-metamask";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MetamaskStateProvider>
+      <App />
+    </MetamaskStateProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
