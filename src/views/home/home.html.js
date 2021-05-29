@@ -1,6 +1,8 @@
 import React from 'react';
 import { HeaderView, FooterView } from '../../component/layouts';
 import './home.scss';
+import DepositModal from "./deposit-modal/deposit-modal";
+import WithdrawModal from "./withdraw-modal/withdraw-modal";
 
 import swapIcon from "../../assets/images/swap-white.svg"
 
@@ -85,8 +87,8 @@ export default function () {
                                     </div>
                                 </div>
                                 <div className="home-right-btns">
-                                    <button className="btn block">DEPOSIT</button>
-                                    <button className="btn secondary-btn block">WITHDRAW</button>
+                                    <DepositModal />
+                                    <WithdrawModal />
                                 </div>
                                 <div className="box-wrapper home-right-card">
                                     <p className="text-white">4ME Pool Reserves</p>

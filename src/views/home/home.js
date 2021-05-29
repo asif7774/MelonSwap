@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import DepositModal from "./deposit-modal/deposit-modal";
-import WithdrawModal from "./withdraw-modal/withdraw-modal";
 import HomeHtml from './home.html'
 
 import toastr from 'toastr'
@@ -45,6 +43,7 @@ class HomeView extends Component {
     }
 
     componentDidMount(){
+        BigNumber.config({ EXPONENTIAL_AT: 1e+9 })
         console.log(this.props);
         window.scrollTo(0, 0);
         if(this.props.metamsk.account.length === 0 && this.props.metamsk.chain.id===null){

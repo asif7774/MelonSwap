@@ -3,7 +3,7 @@ import HarvestModal from "./harvest-modal/harvest-modal"
 import DepositModal from "./deposit-modal/deposit-modal";
 import toastr from 'toastr'
 import BigNumber from "bignumber.js";
-import { CONTRACT_ABI_POOL_GAUGE, CONTRACT_ADDRESS_POOL_GAUGE, ERC_20_ABI,LP_TOKEN_ADD,ELON_ABI,ELON_ADD} from '../../config/config'
+import { CONTRACT_ABI_POOL_GAUGE, CONTRACT_ADDRESS_POOL_GAUGE, ERC_20_ABI,LP_TOKEN_ADD,ELON_ABI,ELON_ADD,MINTER_ABI, MINTER_ADD} from '../../config/config'
 import Web3 from "web3";
 import StakeLp from './stakelp.html'
 
@@ -37,6 +37,7 @@ class StakeLpView extends Component {
 
     }
     componentDidMount() {
+        BigNumber.config({ EXPONENTIAL_AT: 1e+9 })
         window.scrollTo(0, 0);
         if(this.props.metamsk.account.length === 0 && this.props.metamsk.chain.id===null){
             this.setState({walletConnected:false},()=>{this.changeWeb3()})
@@ -62,6 +63,25 @@ class StakeLpView extends Component {
         }
         
     }
+
+    mint = async () => {
+        if(this.state.walletConnected && this.state.loading){
+            let result = null;
+            const minterContract = new this.state.web3.eth.Contract(MINTER_ABI, MINTER_ADD);
+            try{
+                result = await minterContract.methods.mint(CONTRACT_ADDRESS_POOL_GAUGE).send({from:this.state.account})
+            }catch(err){
+                toastr.error(err.message)
+            }
+            if(result){
+                console.log(result.code)
+                toastr.success('Transaction Succesful')
+                this.loadBlockchainData();
+            }
+        }else{
+            toastr.error('Please Connect your wallet')
+        }
+    };
 
     changeWeb3=()=>{
         if(this.props.metamsk.chain.id === '97'){

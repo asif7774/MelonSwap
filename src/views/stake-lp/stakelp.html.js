@@ -31,10 +31,10 @@ export default function () {
                                     <p className="headings">Harvest mELON</p>
                                     <div className="stakelp-box harvest">
                                         <div className="left specialInput">
-                                            <input className="melon-input" placeholder="0" />
+                                            <input className="melon-input" placeholder="0" disabled={true} value={this.state.pendingBalance.toFixed(4)} />
                                         </div>
                                         <div className="right zerPadding">
-                                            <button className="btn secondary-btn mt-3 block">HARVEST</button>
+                                            <button className="btn secondary-btn mt-3 block" onClick={this.mint}>HARVEST</button>
                                         </div>
                                     </div>
                                     
