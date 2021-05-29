@@ -11,11 +11,20 @@
                 .left{
                     width: 100%;
                 }
+                .specialInput{
+                    width: 75% !important;
+                    margin: auto;
+                }
                 .right{
                     display: flex;
                     flex-direction: column;
                     width: 100%;
                     padding-left: 30px;
+                }
+                .zerPadding{
+                    padding-left: 0px !important;
+                    width: 50% !important;
+                    margin: auto;
                 }
                 p{
                     font-family: rainyhearts;
@@ -28,6 +37,18 @@
                 input{
                     margin-right: 20px;
                 }
+            }
+            .stakelp-box-price{
+                font-family: rainyhearts;
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 0;
+                margin-top: 5px;
+            }
+            .harvest{
+                flex-direction: column;
+                text-align: center !important;
             }
             .headings{
                 color: #ffffff;
@@ -51,5 +72,33 @@
         font-weight: 600;
         color: #ffffff;
         text-align: left;
+    }
+ }
+
+  .datepicker-melon{
+    background: #000000;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1.4rem;
+    font-family: rainyhearts;
+    width: 100%;
+ }
+
+ .react-datepicker{
+    .react-datepicker__day{
+        &:hover{
+            background: #7d88be;
+        }
+        &.react-datepicker__day--selected{
+            background: #7d88be;
+        }  
+        &.react-datepicker__day--keyboard-selected{
+            background: #7d88be;
+        } 
+    }
+    .react-datepicker-time__caption{
+        font-weight: 500;
     }
  }
