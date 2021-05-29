@@ -66,6 +66,7 @@ export default function () {
                                                 <button className="btn secondary-btn mt-3 block" onClick={(e)=>{this.widthrawMelon('unlocked')}}>UNLOCK</button>
                                             </div>
                                         </div>
+
                                         <div className="text-center stakelp-box-price">
                                             <p className="mt-0 mb-2">mELON Balance : <span className="text-secondary">43,451</span></p>
                                         </div>
