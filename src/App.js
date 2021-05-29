@@ -50,7 +50,7 @@ function App () {
           <Route exact path="/about" component={AboutView} />
           <Route exact path="/docs" component={DocsView} />
           <Route exact path="/stake-lp" render={()=><StakeLpView metamsk={metaState} />}/>
-          <Route exact path="/stake-melon" component={StakeMelonView} />
+          <Route exact path="/stake-melon" render={()=><StakeMelonView metamsk={metaState} />}  />
         </Switch>
     </Router>
   );

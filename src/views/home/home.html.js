@@ -10,8 +10,9 @@ export default function () {
     return(
         <React.Fragment>
                 <div className="main-wrapper">
-                    <HeaderView />
+                    <HeaderView props={this.state.walletConnected} account={this.state.account} />
                     <div className="content-view">
+                        <div className="content-view-inner">
                         <div className="row">
                             <div className="col-sm-12 col-md-6 col-lg-8">
                                 <div className="box-wrapper home-left">
@@ -87,8 +88,8 @@ export default function () {
                                     </div>
                                 </div>
                                 <div className="home-right-btns">
-                                    <DepositModal />
-                                    <WithdrawModal />
+                                    <DepositModal name="DEPOSIT" web3={this.state.web3} account={this.state.account} coinList={this.state.basePoolCoins} selectedPool={this.state.selectedPool} contract={this.state.contract} slipage={this.state.maxSlipage} reloadBalances={(mode)=>{this.loadBlockchainData()}} walletConnected={this.state.walletConnected} loading={this.state.loading}/>
+                                    <WithdrawModal name="WITHDRAW" web3={this.state.web3} account={this.state.account} coinList={this.state.basePoolCoins} selectedPool={this.state.selectedPool} contract={this.state.contract} slipage={this.state.maxSlipage} reloadBalances={(mode)=>{this.loadBlockchainData()}} walletConnected={this.state.walletConnected} loading={this.state.loading} />
                                 </div>
                                 <div className="box-wrapper home-right-card">
                                     <p className="text-white">4ME Pool Reserves</p>
@@ -127,6 +128,10 @@ export default function () {
                                 </div>
                             </div>
                         </div>
+
+
+                        </div>
+                        
                     </div>
                     <FooterView />
                 </div>

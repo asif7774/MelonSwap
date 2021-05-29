@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Link, NavLink } from "react-router-dom";
 import MediaQuery from 'react-responsive';
 import './header.scss';
-
+import { useMetamask }         from "use-metamask";
 import LogoImage from "../../../assets/images/logo.png";
+import ConnectorButton from "../connectButton/connectButton"
 
  
 class HeaderMenus extends Component {
@@ -45,6 +46,11 @@ class HeaderView extends Component {
     state = {
         collapsed: true,
     };
+
+    componentDidMount(){
+        console.log(this.props)
+    }
+    
     sidebarToggle = (e) => {
         this.setState({
             collapsed: !this.state.collapsed,
@@ -85,7 +91,7 @@ class HeaderView extends Component {
                                 <HeaderMenus />
                             </div>
                         </MediaQuery>
-                        <button className="btn secondary-btn header-connect">Connect</button>
+                        <ConnectorButton props={this.props.props} account={this.props.account} />
                     </div>
                 </div>
             </React.Fragment>

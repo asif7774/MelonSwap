@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import HarvestModal from "./harvest-modal/harvest-modal"
-import DepositModal from "./deposit-modal/deposit-modal";
 import toastr from 'toastr'
 import BigNumber from "bignumber.js";
-import { CONTRACT_ABI_POOL_GAUGE, CONTRACT_ADDRESS_POOL_GAUGE, ERC_20_ABI,LP_TOKEN_ADD,ELON_ABI,ELON_ADD,MINTER_ABI, MINTER_ADD} from '../../config/config'
+import { CONTRACT_ABI_POOL_GAUGE, CONTRACT_ADDRESS_POOL_GAUGE, ERC_20_ABI,LP_TOKEN_ADD,ELON_ABI,ELON_ADD,MINTER_ABI, MINTER_ADD,LP_TOKEN_ABI} from '../../config/config'
 import Web3 from "web3";
 import StakeLp from './stakelp.html'
 
@@ -31,6 +29,7 @@ class StakeLpView extends Component {
             vestedTokens:0,
             totalVested:0,
             poolInfo : [{poolIndex:0,name:"4 POOL",type:'base'},{poolIndex:1,name:"VAI POOL",type:"meta"}],
+            deposit4Me : null
 
         }
         
@@ -97,6 +96,104 @@ class StakeLpView extends Component {
         
     }
 
+    handleDepositChange = (e) =>{
+        if(e.target.value !=''){
+            this.setState({deposit4Me:parseFloat(e.target.value)})
+        }else{
+            this.setState({deposit4Me:(e.target.value)})
+        }
+        
+    }
+
+    widthraw4Me = async () => {
+        if(this.state.walletConnected && this.state.loading){
+            if(this.state.deposit4Me>0){
+                let contract = null
+                let result=null;
+                contract = new this.props.metamsk.web3.eth.Contract(CONTRACT_ABI_POOL_GAUGE, CONTRACT_ADDRESS_POOL_GAUGE);
+                try{
+                    result = await contract.methods.withdraw(new BigNumber(parseFloat(this.state.deposit4Me)).multipliedBy(Math.pow(10,18)).toString(10)).send({from:this.state.account})
+                }catch(err){
+                    toastr.error(err.message)
+                }
+                if(result && result.code !== 4001){
+                    toastr.success('Transaction Complete')
+                    await this.loadBlockchainData('both')
+                    this.setState({widthrawFund:0})
+                }
+            }else{
+                toastr.error('Please Enter valid amount')
+                
+            }
+        }else{
+            toastr.error('Please Connect your wallet')
+        }
+    }
+
+    deposit4Me = async () => {
+        if(this.state.walletConnected && this.state.loading){
+            let data = await this.getLpTokenApproval()
+            if(data>0){
+                this.depositTransact(data);
+           }
+        }else{
+            toastr.error('Please Connect your wallet')
+        }
+    }
+
+    getLpTokenApproval =async () => {
+        console.log(this.state.account)
+        web3 = this.props.metamsk.web3
+        let approvedX = -1;
+        let address = null;
+        let i=0;
+        if(this.state.deposit4Me >= 0.0){
+            address = LP_TOKEN_ADD;
+            const erc20abiContract = new web3.eth.Contract(LP_TOKEN_ABI, address);
+            let ammount = new BigNumber(this.state.deposit4Me).multipliedBy(Math.pow(10,18));
+            let result = null;
+            try{
+                result =  await erc20abiContract.methods.approve(CONTRACT_ADDRESS_POOL_GAUGE,ammount.toString(10)).send({from:this.state.account});
+            }catch(err){
+                console.log(err)
+                toastr.error('Error Occured while getting Permission.. Please try Again !!!')
+                return [];
+            }
+            if(result.code !== 4001){
+                approvedX = (ammount.toString(10));
+            }else{
+                toastr.error(result.message)
+                approvedX = -1;
+                this.setState({depositPermission:false})
+            }
+        }
+        return approvedX;
+    }
+
+    depositTransact = async(data) =>{
+        if(data>0.0){
+            let contract = null
+            let depositResult = null;
+            data = new BigNumber(data)
+            contract = new this.props.metamsk.web3.eth.Contract(CONTRACT_ABI_POOL_GAUGE, CONTRACT_ADDRESS_POOL_GAUGE);
+            try{
+                depositResult = await contract.methods.deposit(data.toString(10)).send({from:this.state.account});
+            }catch(err){
+                console.log(err)
+                toastr.error(err.message);
+            }
+            if(depositResult){
+                toastr.success('Transaction Succesful')
+                this.loadBlockchainData('both');
+                this.setState({deposit4Me:0});
+            }
+        }else{
+            toastr.error('Please enter valid deposit amount')
+        }
+        
+            
+    }
+
     loadBlockchainData = async ()=>{
         this.setState({loading:false})
         let contract= null,elonTokenContract=null;
@@ -128,12 +225,12 @@ class StakeLpView extends Component {
                 totalVested = new BigNumber(totalVested).dividedBy(precision)
                 console.log(runningBalance.toString(10),userBalance.toString(10))
                 console.log(runningBalance.comparedTo(0))
-                if(!runningBalance.comparedTo(0)){
+                if(!userBalance.comparedTo(0)){
                     pendingBalance = 0;
                 }else{
                     pendingBalance = userBalance.minus(runningBalance);
                 }
-                console.log('i am done')
+                console.log('i am done',pendingBalance.toString(10))
                 val = new BigNumber(val).dividedBy(precision);
                 val = parseFloat(val.toString(10)); 
                 this.setState({userBalance:parseFloat(userBalance.toString(10)),pendingBalance:parseFloat(pendingBalance.toString(10)),balance4ME:val,vestedTokens:parseFloat(vestedTokens.toString(10)),totalVested:parseFloat(totalVested.toString(10))})
